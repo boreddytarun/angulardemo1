@@ -1,0 +1,39 @@
+<h1>AVAILABLE BOOKS</h1>
+<style>p {
+   font-style: italic;
+   color: blue;
+    margin-right: 6px;
+    margin-left: 6px;
+  } 
+  font{
+    font-style: normal;
+  }
+  button{
+    height: 80px;
+    width: 150px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  h1{
+    color:black;
+  }
+  </style>
+
+<div class="flex-container">
+    <div *ngFor="let ele of book" class="row">
+        <div class="col-12 book text-center">
+            <img src="../../assets/{{ele.imageLink}}"  width="100" height="100">
+            <p style="size:200px ;  color: blue;"><font color="#252A34">TITLE : </font>{{ele.title}}</p>
+            <p><font color="#252A34">AUTHOR:</font>  {{ele.author}}</p>
+            <p><font color="#252A34">LANGUAGE:</font>  {{ele.language}}</p>
+            <p><font color="#252A34">PAGES:</font> {{ele.pages}}</p>
+            <p><font color="#252A34">YEAR:</font> {{ele.year}}</p>
+            <p><font color="#252A34">COUNTRY:</font> {{ele.country}}</p>
+            
+          <button (click)="wishList(ele)" class="btn btn-success">WishList</button>
+          <br>
+          <br>
+          <button (click)="completed(ele)" class="btn btn-success">Completed</button>
+        </div>
+    </div>
+</div>
